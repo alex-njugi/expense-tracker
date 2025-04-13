@@ -1,13 +1,15 @@
 import React from "react";
 
-function SearchBar({ searchTerm, onSearch }) {
+function SearchBar(props) {
   return (
     <input
       type="text"
       className="search-input"
       placeholder="Search expenses..."
-      value={searchTerm}
-      onChange={(e) => onSearch(e.target.value)}
+      value={props.searchTerm}
+      onChange={function (event) {
+        props.onSearch(event.target.value);
+      }}
     />
   );
 }

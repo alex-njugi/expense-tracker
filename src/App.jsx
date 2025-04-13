@@ -8,29 +8,35 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleAddExpense = (expense) => {
-    setExpenses([...expenses, expense]);
-  };
+  function handleAddExpense(expense) {
+    setExpenses(expenses.concat(expense));
+  }
 
-  const handleDeleteExpense = (id) => {
-    setExpenses(expenses.filter((expense) => expense.id !== id));
-  };
+  function handleDeleteExpense(id) {
+    const newExpenses = expenses.filter(function (expense) {
+      return expense.id !== id;
+    });
+    setExpenses(newExpenses);
+  }
 
-  const filteredExpenses = expenses.filter((expense) =>
-    expense.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredExpenses = expenses.filter(function (expense) {
+    return expense.name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
 
   return (
     <div className="container">
       <header className="header">
         <h1>Expense Tracker</h1>
-        <p>Start taking control of your finances and life. Record, <br></br>categorize and analyze your spending.</p>
+        <p>
+          Start tracking your money. <br />
+          Record and view your expenses easily.
+        </p>
       </header>
 
       <div className="main-layout">
         <div className="left-panel">
           <h2>Add Expense</h2>
-          <p>Enter your expenses details below</p>
+          <p>Fill in the details below</p>
           <ExpenseForm onAddExpense={handleAddExpense} />
         </div>
 

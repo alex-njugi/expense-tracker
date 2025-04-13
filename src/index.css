@@ -47,7 +47,6 @@ body {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Form Styles */
 .form input,
 .form button,
 .search-input {
@@ -70,7 +69,6 @@ body {
   background-color: #333;
 }
 
-/* Table Styles */
 .expense-table {
   width: 100%;
   border-collapse: collapse;
