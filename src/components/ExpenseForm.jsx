@@ -75,7 +75,7 @@ function ExpenseForm(props) {
         }}
         required
       />
-      <button type="submit">Add Expense</button>
+      <button type="submit">Submit</button>
     </form>
   );
 }
